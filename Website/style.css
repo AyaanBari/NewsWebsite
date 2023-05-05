@@ -133,6 +133,10 @@ a {
 /* HEADER 
 **************************************/
 
+.logo{
+    width: 15%;
+}
+
 .header {
     padding: 0.4rem 0;
     position: relative;
