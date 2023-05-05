@@ -39,10 +39,10 @@
     <!-- Version Tech CSS for this template -->
     <link href="css/version/tech.css" rel="stylesheet">
 
-    <!--[if lt IE 9]>
+    [if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    ![endif]
 
 </head>
 <body>
@@ -67,11 +67,11 @@
                                         <div class="container">
                                             <div class="mega-menu-content clearfix">
                                                 <div class="tab">
-                                                    <button class="tablinks active" onclick="openCategory(event, 'cat01')">Science</button>
-                                                    <button class="tablinks" onclick="openCategory(event, 'cat02')">Technology</button>
-                                                    <button class="tablinks" onclick="openCategory(event, 'cat03')">Social Media</button>
-                                                    <button class="tablinks" onclick="openCategory(event, 'cat04')">Car News</button>
-                                                    <button class="tablinks" onclick="openCategory(event, 'cat05')">Worldwide</button>
+                                                    <button class="tablinks active" onclick="openCategory(event, 'cat01')">Politics</button>
+                                                    <button class="tablinks" onclick="openCategory(event, 'cat02')">Economy and Finance</button>
+                                                    <button class="tablinks" onclick="openCategory(event, 'cat03')">Entertainment</button>
+                                                    <button class="tablinks" onclick="openCategory(event, 'cat04')">Infra and Tech</button>
+                                                    <button class="tablinks" onclick="openCategory(event, 'cat05')">Sports</button>
                                                 </div>
 
                                                 <div class="tab-details clearfix">
@@ -417,7 +417,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="tech-category-01.html">Gadgets</a>
+                                <a class="nav-link" href="tech-category-01.html">Blogs</a>
                             </li>                   
                             <li class="nav-item">
                                 <a class="nav-link" href="tech-category-02.html">Videos</a>
@@ -449,13 +449,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                        <h2><i class="fa fa-play bg-orange"></i> Videos <small class="hidden-xs-down hidden-sm-down">Nulla felis eros, varius sit amet volutpat non. </small></h2>
+                        <h2><i class="fa fa-star bg-orange"></i> Author by: Jessica</h2>
                     </div><!-- end col -->
                     <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Blog</a></li>
-                            <li class="breadcrumb-item active">Videos</li>
+                            <li class="breadcrumb-item"><a href="#">Author</a></li>
+                            <li class="breadcrumb-item active">Jessica</li>
                         </ol>
                     </div><!-- end col -->                    
                 </div><!-- end row -->
@@ -467,186 +467,251 @@
                 <div class="row">
                     <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                         <div class="page-wrapper">
-                            <div class="blog-custom-build">
-                                <div class="blog-box">
-                                    <div class="post-media">
-                                        <a href="tech-single.html" title="">
-                                            <img src="upload/tech_menu_20.jpg" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span class="videohover"></span>
-                                            </div>
-                                            <!-- end hover -->
-                                        </a>
-                                    </div>
-                                    <!-- end media -->
-                                    <div class="blog-meta big-meta text-center">
-                                        <div class="post-sharing">
-                                            <ul class="list-inline">
-                                                <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
-                                                <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
-                                                <li><a href="#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
-                                            </ul>
-                                        </div><!-- end post-sharing -->
-                                        <h4><a href="tech-single.html" title="">The golden rules you need to know for a positive life</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enimcerat elicerat eli nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small><a href="tech-category.html" title="">Videos</a></small>
-                                        <small><a href="tech-single.html" title="">18 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Amanda</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 1114</a></small>
+                            <div class="custombox authorbox clearfix">
+                                <h4 class="small-title">About author</h4>
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                        <img src="upload/author.jpg" alt="" class="img-fluid rounded-circle"> 
+                                    </div><!-- end col -->
+
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                        <h4><a href="#">Jessica</a></h4>
+                                        <p>Quisque sed tristique felis. Lorem <a href="#">visit my website</a> amet, consectetur adipiscing elit. Phasellus quis mi auctor, tincidunt nisl eget, finibus odio. Duis tempus elit quis risus congue feugiat. Thanks for stop Tech Blog!</p>
+
+                                        <div class="topsocial">
+                                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
+                                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Youtube"><i class="fa fa-youtube"></i></a>
+                                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
+                                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Website"><i class="fa fa-link"></i></a>
+                                        </div><!-- end social -->
+
+                                    </div><!-- end col -->
+                                </div><!-- end row -->
+                            </div><!-- end author-box -->
+
+                            <hr class="invis1">
+
+                            <div class="blog-list clearfix">
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="tech-single.html" title="">
+                                                <img src="upload/tech_blog_01.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <h4><a href="tech-single.html" title="">Top 10 phone applications and 2017 mobile design awards</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Reviews</a></small>
+                                        <small><a href="tech-single.html" title="">21 July, 2017</a></small>
+                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
+                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 1114</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
 
                                 <hr class="invis">
 
-                                <div class="blog-box">
-                                    <div class="post-media">
-                                        <a href="tech-single.html" title="">
-                                            <img src="upload/tech_menu_19.jpg" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span class="videohover"></span>
-                                            </div>
-                                            <!-- end hover -->
-                                        </a>
-                                    </div>
-                                    <!-- end media -->
-                                    <div class="blog-meta big-meta text-center">
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="tech-single.html" title="">
+                                                <img src="upload/tech_blog_02.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
 
-                                        <div class="post-sharing">
-                                            <ul class="list-inline">
-                                                <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
-                                                <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
-                                                <li><a href="#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
-                                            </ul>
-                                        </div><!-- end post-sharing -->
-                                        <h4><a href="tech-single.html" title="">Your visit to China will be good for your soul</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enimcerat elicerat eli nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small><a href="tech-category.html" title="">Videos</a></small>
-                                        <small><a href="tech-single.html" title="">18 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Amanda</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 1114</a></small>
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <h4><a href="tech-single.html" title="">A device you can use both headphones and usb</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Reviews</a></small>
+                                        <small><a href="tech-single.html" title="">21 July, 2017</a></small>
+                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
+                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 4412</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
 
                                 <hr class="invis">
 
-                                <div class="blog-box">
-                                    <div class="post-media">
-                                        <a href="tech-single.html" title="">
-                                            <img src="upload/tech_menu_18.jpg" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span class="videohover"></span>
-                                            </div>
-                                            <!-- end hover -->
-                                        </a>
-                                    </div>
-                                    <!-- end media -->
-                                    <div class="blog-meta big-meta text-center">
-                                        <div class="post-sharing">
-                                            <ul class="list-inline">
-                                                <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
-                                                <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
-                                                <li><a href="#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
-                                            </ul>
-                                        </div><!-- end post-sharing -->
-                                        <h4><a href="tech-single.html" title="">Extend your feet and enjoy the nature</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enimcerat elicerat eli nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small><a href="tech-category.html" title="">Videos</a></small>
-                                        <small><a href="tech-single.html" title="">18 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Amanda</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 1114</a></small>
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="tech-single.html" title="">
+                                                <img src="upload/tech_blog_03.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <h4><a href="tech-single.html" title="">Two brand new laptop models from ABC computer</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Reviews</a></small>
+                                        <small><a href="tech-single.html" title="">20 July, 2017</a></small>
+                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
+                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 2313</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
 
                                 <hr class="invis">
 
-                                <div class="blog-box">
-                                    <div class="post-media">
-                                        <a href="tech-single.html" title="">
-                                            <img src="upload/tech_menu_17.jpg" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span class="videohover"></span>
-                                            </div>
-                                            <!-- end hover -->
-                                        </a>
-                                    </div>
-                                    <!-- end media -->
-                                    <div class="blog-meta big-meta text-center">
-                                        <div class="post-sharing">
-                                            <ul class="list-inline">
-                                                <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
-                                                <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
-                                                <li><a href="#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
-                                            </ul>
-                                        </div><!-- end post-sharing -->
-                                        <h4><a href="tech-single.html" title="">Stay alone with nature to rest your soul</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enimcerat elicerat eli nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small><a href="tech-category.html" title="">Videos</a></small>
-                                        <small><a href="tech-single.html" title="">18 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Amanda</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 1114</a></small>
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="tech-single.html" title="">
+                                                <img src="upload/tech_blog_04.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <h4><a href="tech-single.html" title="">Applications for taking photos of nature in your mobile phones</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Reviews</a></small>
+                                        <small><a href="tech-single.html" title="">19 July, 2017</a></small>
+                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
+                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 4441</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
 
                                 <hr class="invis">
 
-                                <div class="blog-box">
-                                    <div class="post-media">
-                                        <a href="tech-single.html" title="">
-                                            <img src="upload/tech_menu_16.jpg" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span class="videohover"></span>
-                                            </div>
-                                            <!-- end hover -->
-                                        </a>
-                                    </div>
-                                    <!-- end media -->
-                                    <div class="blog-meta big-meta text-center">
-                                        <div class="post-sharing">
-                                            <ul class="list-inline">
-                                                <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
-                                                <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
-                                                <li><a href="#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
-                                            </ul>
-                                        </div><!-- end post-sharing -->
-                                        <h4><a href="tech-single.html" title="">Sea waves and endless happiness</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enimcerat elicerat eli nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small><a href="tech-category.html" title="">Videos</a></small>
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="tech-single.html" title="">
+                                                <img src="upload/tech_blog_05.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <h4><a href="tech-single.html" title="">Say hello to colored strap models in smart hours</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Reviews</a></small>
                                         <small><a href="tech-single.html" title="">18 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Amanda</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 1114</a></small>
+                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
+                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 33312</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
 
                                 <hr class="invis">
 
-                                <div class="blog-box">
-                                    <div class="post-media">
-                                        <a href="tech-single.html" title="">
-                                            <img src="upload/tech_menu_15.jpg" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span class="videohover"></span>
-                                            </div>
-                                            <!-- end hover -->
-                                        </a>
-                                    </div>
-                                    <!-- end media -->
-                                    <div class="blog-meta big-meta text-center">
-                                        <div class="post-sharing">
-                                            <ul class="list-inline">
-                                                <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
-                                                <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
-                                                <li><a href="#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
-                                            </ul>
-                                        </div><!-- end post-sharing -->
-                                        <h4><a href="techsingle.html" title="">How to spend a romantic holiday with your girlfriend?</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enimcerat elicerat eli nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small><a href="tech-category.html" title="">Videos</a></small>
-                                        <small><a href="tech-single.html" title="">18 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Amanda</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 1114</a></small>
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="tech-single.html" title="">
+                                                <img src="upload/tech_blog_06.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <h4><a href="tech-single.html" title="">How about evaluating your old mobile phones in different ways?</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Reviews</a></small>
+                                        <small><a href="tech-single.html" title="">17 July, 2017</a></small>
+                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
+                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 4440</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
-                            </div><!-- end blog-custom-build -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="tech-single.html" title="">
+                                                <img src="upload/tech_blog_07.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <h4><a href="tech-single.html" title="">Drinking coffee at the computer rests the spirit</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Reviews</a></small>
+                                        <small><a href="tech-single.html" title="">16 July, 2017</a></small>
+                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
+                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 4412</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="tech-single.html" title="">
+                                                <img src="upload/tech_blog_08.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <h4><a href="tech-single.html" title="">If you are considering buying a new safe for your mobile phone, be sure to read this article</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Reviews</a></small>
+                                        <small><a href="tech-single.html" title="">15 July, 2017</a></small>
+                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
+                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 44123</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="tech-single.html" title="">
+                                                <img src="upload/tech_blog_09.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <h4><a href="tech-single.html" title="">Enjoy a summer with a colorful headset</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Technology</a></small>
+                                        <small><a href="tech-single.html" title="">14 July, 2017</a></small>
+                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
+                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 2214</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="tech-single.html" title="">
+                                                <img src="upload/tech_blog_10.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <h4><a href="tech-single.html" title="">Google has developed a brand new algorithm. Forget all your knowledge!</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Gadgets</a></small>
+                                        <small><a href="tech-single.html" title="">13 July, 2017</a></small>
+                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
+                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 3331</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+                            </div><!-- end blog-list -->
                         </div><!-- end page-wrapper -->
 
                         <hr class="invis">
@@ -654,7 +719,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <nav aria-label="Page navigation">
-                                    <ul class="pagination justify-content-center">
+                                    <ul class="pagination justify-content-start">
                                         <li class="page-item"><a class="page-link" href="#">1</a></li>
                                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                                         <li class="page-item"><a class="page-link" href="#">3</a></li>
@@ -669,6 +734,40 @@
 
                     <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                         <div class="sidebar">
+                            <div class="widget">
+                                <h2 class="widget-title">Follow Us</h2>
+
+                                <div class="row text-center">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                        <a href="#" class="social-button facebook-button">
+                                            <i class="fa fa-facebook"></i>
+                                            <p>27k</p>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                        <a href="#" class="social-button twitter-button">
+                                            <i class="fa fa-twitter"></i>
+                                            <p>98k</p>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                        <a href="#" class="social-button google-button">
+                                            <i class="fa fa-google-plus"></i>
+                                            <p>17k</p>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                        <a href="#" class="social-button youtube-button">
+                                            <i class="fa fa-youtube"></i>
+                                            <p>22k</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div><!-- end widget -->
+                            
                             <div class="widget">
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
@@ -807,41 +906,6 @@
                                     </div>
                                 </div><!-- end blog-list -->
                             </div><!-- end widget -->
-
-                            <div class="widget">
-                                <h2 class="widget-title">Follow Us</h2>
-
-                                <div class="row text-center">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <a href="#" class="social-button facebook-button">
-                                            <i class="fa fa-facebook"></i>
-                                            <p>27k</p>
-                                        </a>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <a href="#" class="social-button twitter-button">
-                                            <i class="fa fa-twitter"></i>
-                                            <p>98k</p>
-                                        </a>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <a href="#" class="social-button google-button">
-                                            <i class="fa fa-google-plus"></i>
-                                            <p>17k</p>
-                                        </a>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <a href="#" class="social-button youtube-button">
-                                            <i class="fa fa-youtube"></i>
-                                            <p>22k</p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div><!-- end widget -->
-
                             <div class="widget">
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
@@ -851,7 +915,7 @@
                             </div><!-- end widget -->
                         </div><!-- end sidebar -->
                     </div><!-- end col -->
-                </div>
+                </div><!-- end row -->
             </div><!-- end container -->
         </section>
 
@@ -859,7 +923,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7">
-                        
+                        <div class="widget"></div>
+
+                                <hr class="invis">
+
+                                
+                            </div><!-- end footer-text -->
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
 
                     <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                         <div class="widget">
@@ -875,7 +946,7 @@
                             </div><!-- end link-widget -->
                         </div><!-- end widget -->
                     </div><!-- end col -->
-
+                
                     <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
                         <div class="widget">
                             <h2 class="widget-title">Copyrights</h2>
@@ -890,7 +961,9 @@
                             </div><!-- end link-widget -->
                         </div><!-- end widget -->
                     </div><!-- end col -->
+                    </div>
                 </div>
+                   
 
                 
 
