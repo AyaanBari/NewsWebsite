@@ -3929,7 +3929,7 @@ tbody.collapse.show {
   display: inline-block;
   padding-top: .25rem;
   padding-bottom: .25rem;
-  margin-right: 1rem;
+  margin-right: -15rem;
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
