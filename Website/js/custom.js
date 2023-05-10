@@ -91,7 +91,7 @@ function suna(r, catm) {
                                                                                     <div class="hovereffect">
                                                                                     </div>
                                                                                     <!-- end hover -->
-                                                                                    <span class="menucat">Politics</span>
+                                                                                    <span class="menucat">${mainarray[r]}</span>
                                                                                 </a>
                                                                             </div>
                                                                             <!-- end media -->
