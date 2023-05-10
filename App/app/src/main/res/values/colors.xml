@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F6B819</color>
+    <color name="colorPrimaryDark">#273e96</color>
+    <color name="colorAccent">#062b3d</color>
+    <color name="TextColorMain">#3A3A3A</color>
+    <color name="lightgray">#F2F2F2</color>
+    <color name="icongray">#B0B1B1</color>
+    <color name="custom_yellow">#062b3d</color>
+    <color name="white"> #fdfefe</color>
+    <color name="BG">#EAEAEA</color>
+    <color name="Truewhite"> #FFFFFF</color>
+    <color name="shade_a">#AA000000</color>
+    <color name="black50">#7F000000</color>
+    <color name="circle_grey">#d6dbdf </color>
+    <color name="green">#ADFF2F</color>
+    <color name="yellow">#FFF34E</color>
+    <color name="selectyellow">#F9BF3B</color>
+    <color name="red">#FF5733</color>
+    <color name="dd">#33FFC7</color>
+    <color name="grey">#f1f1f1</color>
+    <color name="darkGrey">#707070</color>
+    <color name="innerGrey">#BDBDBD</color>
+    <color name="blue">#3699FF</color>
+    <color name="gray">#AAA</color>
+    <color name="feedbackgray">#F8F8F8</color>
+    <color name="darkblue">#1e3076</color>
+    <color name="lightkblue">#969DB1</color>
+
+    <color name="black">#303F9F</color>
+
+    <color name="Black">#000000</color>
+
+    <color name="btn"> #424242</color>
+    <color name="online">#388E3C</color>
+    <color name="shareRideBtnColor">#4E4E4E</color>
+    <color name="Onclickcolor">#3e3e3e</color>
+    <color name="se_blue">#062b3d</color>
+    <color name="li_blue">#1976D2</color>
+    <color name="text_clr">#263d06</color>
+    <color name="btn_clr">#9dae11</color>
+    <color name="black_clr">#000000</color>
+    <color name="white_clr">#ffffff</color>
+    <color name="header_clr">#FFBC33</color>
+    <color name="new_bottom_panel_blue1">#0087E2</color>
+    <color name="new_bottom_panel_blue2">#049FD4</color>
+    <color name="new_bottom_panel_blue3">#23DAD6</color>
+    <color name="new_bottom_panel_blue4">#58DFE2</color>
+    <color name="new_bottom_panel_blue5">#73EFE7</color>
+
+    <color name="new_bottom_panel_color1">#CDCBAE</color>
+    <color name="new_bottom_panel_color2">#F3BA7E</color>
+    <color name="new_bottom_panel_color3">#659BA5</color>
+    <color name="new_bottom_panel_color4">#FF8588</color>
+    <color name="new_bottom_panel_color5">#7D6678</color>
+
+    <color name="toasty_error_color">#F03434</color>
+    <color name="toasty_info_color">#4ECDC4</color>
+    <color name="toasty_success_color">#26A65B</color>
+    <color name="toasty_warning_color">#F89406</color>
+    <color name="toasty_text_color">#FFFFFF</color>
+
+</resources>
