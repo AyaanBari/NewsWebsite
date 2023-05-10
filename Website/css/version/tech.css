@@ -1,7 +1,10 @@
-
-
 body {
     background-color: #ffffff;
+}
+
+#send:hover {
+    color: black;
+    background-color: white;
 }
 
 h1,
