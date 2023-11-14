@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Site Metas -->
+    <title>Today & Tomorrow News - Home</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Sign Up - Today & Tomorrow News</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+z0I5t9z1i6U5OzfsI/p1Ab/ScdG3S+25XlJ2al"
+      crossorigin="anonymous"
+    />
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <!-- Design fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+
+    <!-- FontAwesome Icons core CSS -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet" />
+
+    <!-- Responsive styles for this template -->
+    <link href="css/responsive.css" rel="stylesheet" />
+
+    <!-- Colors for this template -->
+    <link href="css/colors.css" rel="stylesheet" />
+
+    <!-- Version Tech CSS for this template -->
+    <link href="css/version/tech.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="wrapper">
+      <header class="tech-header header">
+        <div class="container-fluid">
+            <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="images/logo.jpg" alt="logo" class="logo"></a>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown has-submenu menu-large hidden-md-down hidden-sm-down hidden-xs-down">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">News</a>
+                            <ul class="dropdown-menu megamenu" aria-labelledby="dropdown01">
+                                <li>
+                                    <div class="container">
+                                        <div class="mega-menu-content clearfix">
+                                            <div class="tab">
+                                                <button class="tablinks active" onclick="openCategory(event, 'cat01')">Politics</button>
+                                                <button class="tablinks" onclick="openCategory(event, 'cat02')">Economy and Finance</button>
+                                                <button class="tablinks" onclick="openCategory(event, 'cat03')">Entertainment</button>
+                                                <button class="tablinks" onclick="openCategory(event, 'cat04')">Infra and Tech</button>
+                                                <button class="tablinks" onclick="openCategory(event, 'cat05')">Sports</button>
+                                            </div>
+
+                                            <div class="tab-details clearfix">
+                                                <div id="cat01" class="tabcontent active">
+                                                    <div id="politics" class="row main"></div>
+                                                    <!-- end row -->
+                                                </div>
+                                                <div id="cat02" class="tabcontent">
+                                                    <div id="economy" class="row"></div>
+                                                    <!-- end row -->
+                                                </div>
+                                                <div id="cat03" class="tabcontent">
+                                                    <div id="entertainment" class="row"></div>
+                                                    <!-- end row -->
+                                                </div>
+                                                <div id="cat04" class="tabcontent">
+                                                    <div id="tech" class="row">
+
+                                                    </div>
+                                                    <!-- end row -->
+                                                </div>
+                                                <div id="cat05" class="tabcontent">
+                                                    <div id="Sports" class="row">
+
+                                                    </div>
+                                                    <!-- end row -->
+                                                </div>
+                                            </div>
+                                            <!-- end tab-details -->
+                                        </div>
+                                        <!-- end mega-menu-content -->
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tech-category-01.html">Blogs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tech-category-02.html">Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tech-category-03.html">Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tech-contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mr-2 signup">
+                        <a href="sign-in.html" class="btn btn-secondary text-white border-0 btn-outline-light btn-hover-light px-0 btn-lg btn-block px-4 py-2 rounded" mr-2>Sign In</a>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- end container-fluid -->
+    </header>
+    <!-- end market-header -->
+
+    <section class="section first-section">
+        <div class="container-fluid">
+            <div class="masonry-blog clearfix">
+                <div class="first-slot">
+                    <div id="image-01" class="masonry-box post-media">
+
+                        <!-- end shadow -->
+                    </div>
+                    <!-- end post-media -->
+                </div>
+                <!-- end first-side -->
+
+                <div class="second-slot">
+                    <div id="image-02" class="masonry-box post-media">
+
+                        <!-- end shadow -->
+                    </div>
+                    <!-- end post-media -->
+                </div>
+                <!-- end second-side -->
+
+                <div class="last-slot">
+                    <div id="image-03" class="masonry-box post-media"></div>
+                    <!-- end shadow -->
+                </div>
+                <!-- end post-media -->
+            </div>
+            <!-- end second-side -->
+        </div>
+        <!-- end masonry -->
+</div>
+</section>
+
+<section class="vh-100" style="background-color: white;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <img src="images/signupin.jpg"
+                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+  
+                  <form>
+  
+                    <div class="d-flex align-items-center mb-2 ">
+                        <img src="images/logo.jpg" style="width: 30px;" class="mr-2" alt="">
+                      <span class="h3 fw-bold mb-0">Today & Tomorrow</span>
+                    </div>
+  
+                    <h5 class="fw-normal mb-2 pb-3" style="letter-spacing: 1px;">Register your account</h5>
+
+                    <div class="form-outline mb-2">
+                        <input type="text" id="user-name" placeholder="Name" class="form-control form-control-lg" />
+                        <label class="form-label" for="user-name"></label>
+                      </div>
+  
+                    <div class="form-outline mb-2">
+                      <input type="email" id="email" placeholder="Email address" class="form-control form-control-lg" />
+                      <label class="form-label" for="email"></label>
+                    </div>
+  
+                    <div class="form-outline mb-2">
+                      <input type="password" id="password" placeholder="Password" class="form-control form-control-lg" />
+                      <label class="form-label" for="password"></label>
+                    </div>
+                    <div class="form-outline mb-2">
+                      <input type="password" id="password-reenter" placeholder="Re-enter Password" class="form-control form-control-lg" />
+                      <label class="form-label" for="password-reenter"></label>
+                    </div>
+  
+                    <div class="pt-1 mb-4">
+                      <button class="btn btn-dark btn-lg btn-block" type="button">Register</button>
+                    </div>
+
+                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Already Registered? <a href="signin.html"
+                        style="color: #393f81;">Sign In</a></p>
+                    <a href="#!" class="small text-muted">Terms of use.</a>
+                    <a href="#!" class="small text-muted">Privacy policy</a>
+                  </form>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    </div>
+
+    <footer class="footer">
+        <div class="row" style="margin: 18px; padding: 12px;">
+            <div class="col-lg-4  col-md-12 col-sm-12 col-xs-12">
+    
+                <div class="widget">
+                    <h2 class="widget-title">Popular Categories</h2>
+                    <div>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Blogs</a></li>
+                            <li><a href="#">Reviews</a></li>
+                        </ul>
+                    </div>
+                    <!-- end link-widget -->
+                </div>
+                <!-- end widget -->
+    
+            </div>
+            <div class="col-lg-4  col-md-12 col-sm-12 col-xs-12">
+    
+                <div class="widget">
+                    <h2 class="widget-title">News Links</h2>
+                    <div>
+                        <ul>
+                            <li><a href="#">Latest News</a></li>
+                            <li><a href="#">World News </a></li>
+                            <li><a href="#">India News </a></li>
+                            <li><a href="#">West Bengal News</a></li>
+                            <li><a href="#">Kolkata News</a></li>
+                        </ul>
+                    </div>
+                    <!-- end link-widget -->
+                </div>
+                <!-- end widget -->
+    
+            </div>
+            <div class="col-lg-4  col-md-12 col-sm-12 col-xs-12">
+    
+                <div class="widget">
+                    <h2 class="widget-title">Contact</h2>
+                    <div>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>todayandtommorow@news.com</a></li>
+                            <li><a href="#"><i class="fa fa-phone-square" aria-hidden="true"></i> (033)30025678</a></li>
+                            <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> 1/1, ABC Road, Kolkata-700001</a></li>
+                        </ul>
+                    </div>
+                    <!-- end link-widget -->
+                </div>
+                <!-- end widget -->
+    
+            </div>
+            <!-- end widget -->
+    
+        </div>
+        <hr style="background-color: white;">
+    
+        <div style="justify-items: center; text-align: center;">
+            <p>Copyright<br>
+                @2023 Today And Tommorow News. All Rights Reserved
+                </a> 
+            </p>
+        </div>
+    
+        </div>
+    </footer>
+
+    <!-- Core JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>
