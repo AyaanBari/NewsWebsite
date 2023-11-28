@@ -1,0 +1,107 @@
+{%load static%}
+{% if request.user.is_authenticated %}
+<div id="wrapper">
+    <header class="tech-header header">
+        <div class="container-fluid">
+            <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'today/images/logo.jpg' %}" alt="logo" class="logo"></a>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto" >
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'index' %}">Home</a>
+                        </li>
+                        
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'tech-category-02'%}">Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'tech-contact'%}">Contact Us</a>
+                        </li>
+                        <li class="nav-item"    style="margin-left:700px">
+                            {{request.user.get_full_name}}
+                        </li>
+                       <li> <ul class="navbar-nav mr-2 signup" style="margin-left:50px">
+                            <a href="{% url 'signout' %}" class="btn btn-secondary text-white border-0 btn-outline-light btn-hover-light px-0 btn-lg btn-block px-4 py-2 rounder" style="border-radius:10%" mr-2>Signout</a>
+                        </ul>
+
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- end container-fluid -->
+    </header>
+    <!-- end market-header -->
+    {% else %}
+ <div id="wrapper">
+    <header class="tech-header header">
+        <div class="container-fluid">
+            <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'today/images/logo.jpg' %}" alt="logo" class="logo"></a>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto" >
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'index' %}">Home</a>
+                        </li>
+          
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'tech-category-02'%}">Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'tech-contact'%}">Contact Us</a>
+                        </li>
+                       <li> <ul class="navbar-nav mr-2 signup" style="margin-left:800px">
+                            <a href="{% url 'signin' %}" class="btn btn-secondary text-white border-0 btn-outline-light btn-hover-light px-0 btn-lg btn-block px-4 py-2 rounder" style="border-radius:10%" mr-2>Sign In</a>
+                        </ul>
+
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- end container-fluid -->
+    </header>
+    <!-- end market-header -->
+    {% endif %}
+    <br><br>
+    <!-- end market-header -->
+
+  <!--  <section class="section first-section">
+        <div class="container-fluid">
+            <div class="masonry-blog clearfix">
+                <div class="first-slot">
+                    <div id="image-01" class="masonry-box post-media">
+                        <script src="js/navpic/1stpic.js"></script>
+                        
+                    </div>
+                    
+                </div>
+               
+
+                <div class="second-slot">
+                    <div id="image-02" class="masonry-box post-media">
+                        <script src="js/navpic/2stpic.js"></script>
+                        
+                    </div>
+                  
+                </div>
+             
+
+                <div class="last-slot">
+                    <div id="image-03" class="masonry-box post-media"></div>
+                    <script src="js/navpic/3stpic.js"></script>
+                  
+                </div>
+                
+            </div>
+           
+        </div>
+     
+</div>-->

@@ -1,0 +1,336 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Site Metas -->
+<title>Today & Tomorrow News - Home</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Site Icons -->
+<link rel="shortcut icon" href="{% static 'today/images/favicon.ico' %}" type="image/x-icon" />
+<link rel="apple-touch-icon" href="{% static 'today/images/apple-touch-icon.png' %}">
+
+<!-- Design fonts -->
+ <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+
+<link href="{% static 'today/css/bootstrap.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+<link href="{% static 'today/css/style.css' %}" rel="stylesheet">
+
+<link href="{% static 'today/css/font-awesome.min.css' %}" rel="stylesheet">
+
+    <!-- Responsive styles for this template -->
+    <link href="{% static 'today/css/responsive.css' %}" rel="stylesheet">
+
+    <!-- Colors for this template -->
+    <link href="{% static 'todaycss/colors.css' %}" rel="stylesheet">
+
+    <!-- Version Tech CSS for this template -->
+    <link href="{% static 'today/css/tech.css' %}" rel="stylesheet">
+
+    <script src="{% static 'today/js/custom.js' %}"></script>
+
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <style>
+        
+    </style>
+</head>
+
+<body style="background-color:black;">
+
+{% include './nav.html' %}
+
+
+  
+<div class="col-md-12">
+    <br>
+<hr>
+    <div class="category-pane">
+        <div class="btn-group d-flex" role="group" aria-label="Category Buttons" style="justify-coontent:none">
+        <a href="{% url 'index' %}?category=technology"  style ="border-radius:49px; background-color:red; color:white; padding:20px;width:123px;height:60px;margin:0 auto;text-align:center;"><span style = "align-items:center;">Technology</span></a>
+        <a href="{% url 'index' %}?category=health"  style ="border-radius:49px;background-color:red; color:white; padding:20px;width:123px;height:60px;margin:0 auto;text-align:center;"><span style = "align-items:center;">Health</span></a>
+        <a href="{% url 'index' %}?category=Entertainment"  style ="border-radius:49px;background-color:red; color:white; padding:20px;width:150px;height:60px;margin:0 auto;text-align:center;"><span style = "align-items:center;">Entertaniment</span></a>
+        <a href="{% url 'index' %}?category=Sports" style ="border-radius:49px;background-color:red; color:white; padding:20px;width:123px;height:60px;margin:0 auto;text-align:center;"><span style = "align-items:center;">Sports</span></a>
+        <a href="{% url 'index' %}?category=Science"  style ="border-radius:49px;background-color:red; color:white; padding:20px;width:123px;height:60px;margin:0 auto;text-align:center;"><span style = "align-items:center;">Scince</span></a>
+        <a href="{% url 'index' %}?category=Business"  style ="border-radius:49px;background-color:red; color:white; padding:20px;width:123px;height:60px;margin:0 auto;text-align:center;"><span style = "align-items:center;">Business</span></a>
+        </div>
+    </div>
+    <hr>
+
+</div>
+<br>   
+<br>
+<div class = 'container'style="margin-bottom:40px;">
+    <center><div class="row">
+        <div class="col-md-12">
+            <div id="main-content" class="blog-top clearfix">
+                <h4 class="pull-left"style="color:white;">Recent News <a href="#"><i class="fa fa-rss"></i></a></h4>
+            </div>
+            {% for i in articles %}
+            
+            <div class="card rounded shadow-lg" style="width: 40rem;margin-bottom:70px;">
+                
+                <img src="{{ i.urlToImage }}" class="card-img-top" alt="...">
+                <div class="card-body" style ="padding:10px;">
+                <p class="card-text">{{ i.author }}</p>
+                <h5 class="card-title">{{ i.title }}</h5>
+                <p class="card-title">{{ i.source.name }}</p>
+                <p class="card-text">{{ i.description }}</p>
+                <p class="card-text">{{ i.content }}</p>
+                <hr>
+                <small style = "position:relative; margin-bottom:10px;">date: {{ i.publishedAt }}</small>
+                <a href="{{ i.url }}" target="_blank" style="position:absolute; right:10px; background-color:red; color:white; padding:15px;">See News</a>
+                </div>
+            </div>
+
+          {% endfor %}
+    </div><br><br></center>
+    
+</div>
+
+    {% comment %} <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                    <div class="page-wrapper">
+                        <div id="main-content" class="blog-top clearfix">
+                            <h4 class="pull-left">Recent News <a href="#"><i class="fa fa-rss"></i></a></h4>
+                        </div>
+                        <!-- end blog-top -->
+
+                        <div id="main-content" class="blog-list clearfix"></div>
+
+                        <!-- end blog-list -->
+                    </div>
+                    <!-- end page-wrapper -->
+
+                    <hr class="invis">
+
+
+                </div>
+                <!-- end col -->
+
+                <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                    <div class="sidebar">
+                        <div class="widget">
+                            <div class="banner-spot clearfix">
+                                <div class="banner-img">
+                                    <img src="https://th.bing.com/th/id/OIP.ttESAmGQFpubZGxzkNkufgHaEP?pid=ImgDet&rs=1" alt="" class="img-fluid">
+                                </div>
+                                <!-- end banner-img -->
+                            </div>
+                            <!-- end banner -->
+                        </div>
+                        <!-- end widget -->
+
+                        <div class="widget">
+                            <h2 class="widget-title">Trend Videos</h2>
+                            <div class="trend-videos">
+                                <div class="blog-box">
+                                    <div class="post-media">
+                                        <a href="https://janeegracey.blogspot.com/2023/05/kerala-story.html" title="">
+                                            <img src="https://st1.bollywoodlife.com/wp-content/uploads/2023/05/the-kerala-story-interview.jpg" alt="" class="img-fluid">
+                                            <div class="hovereffect">
+                                                <span class="videohover"></span>
+                                            </div>
+                                            <!-- end hover -->
+                                        </a>
+                                    </div>
+                                    <!-- end media -->
+                                    <div class="blog-meta">
+                                        <h4><a href="https://janeegracey.blogspot.com/2023/05/kerala-story.html" title="">The Kerala Story Ban In West Bengal Is ‘Unjustified’ Says Producers' Association, Asks Government To Withdraw It</a></h4>
+                                    </div>
+                                    <!-- end meta -->
+                                </div>
+                                <!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box">
+                                    <div class="post-media">
+                                        <a href="https://www.magzter.com/IN/India-Today-Group/India-Today/News/63179" title="">
+                                            <img src="https://files.magzter.com/resize/magazine/India%20Today/183/view/3.jpg" alt="" class="img-fluid">
+                                            <div class="hovereffect">
+                                                <span class="videohover"></span>
+                                            </div>
+                                            <!-- end hover -->
+                                        </a>
+                                    </div>
+                                    <!-- end media -->
+                                    <div class="blog-meta">
+                                        <h4><a href="https://www.magzter.com/IN/India-Today-Group/India-Today/News/63179" title="">India Today-September 1, 2014 Magazine - Get your Digital Subscription</a></h4>
+                                    </div>
+                                    <!-- end meta -->
+                                </div>
+                                <!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box">
+                                    <div class="post-media">
+                                        <a href="https://www.nytimes.com/2008/07/15/world/africa/15sudan.html" title="">
+                                            <img src="https://static01.nyt.com/images/2008/07/15/world/14darfur.600.jpg?quality=75&auto=webp&disable=upscale" alt="" class="img-fluid">
+                                            <div class="hovereffect">
+                                                <span class="videohover"></span>
+                                            </div>
+                                            <!-- end hover -->
+                                        </a>
+                                    </div>
+                                    <!-- end media -->
+                                    <div class="blog-meta">
+                                        <h4><a href="https://www.nytimes.com/2008/07/15/world/africa/15sudan.html" title="">Arrest Is Sought of Sudan Leader in Genocide Case</a></h4>
+                                    </div>
+                                    <!-- end meta -->
+                                </div>
+                                <!-- end blog-box -->
+                            </div>
+                            <!-- end videos -->
+                        </div>
+                        <!-- end widget -->
+
+                        <div class="widget">
+                            <h2 class="widget-title">Popular Posts</h2>
+                            <div class="blog-list-widget">
+                                <div class="list-group">
+                                    <a href="https://www.msn.com/en-in/news/other/resul-pookutty-s-hashtag-campaign-in-protest-against-the-kerala-story-draws-heartwarming-responses/ar-AA1aVzkR" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <div class="w-100 justify-content-between">
+                                            <img src="https://www.bing.com/th?id=OVFT.5t_zAxHwGE3EJwKjJUJhUS&pid=News&w=300&h=186&c=14&rs=2&qlt=90" alt="" class="img-fluid float-left">
+                                            <h5 class="mb-1">https://www.msn.com/en-in/news/other/resul-pookutty-s-hashtag-campaign-in-protest-against-the-kerala-story-draws-heartwarming-responses/ar-AA1aVzkR</small>
+                                        </div>
+                                    </a>
+
+                                    <a href="https://www.indiatoday.in/world/story/imran-khan-arrest-pakistan-live-updates-army-headquarters-rawalpindi-islamabad-lahore-2376941-2023-05-09" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <div class="w-100 justify-content-between">
+                                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/202305/collage_maker-09-may-2023-07-17-pm-2196-sixteen_nine.jpg?VersionId=eihnwJWa7JCii6s7l2JUHkClZC3VykRX" alt="" class="img-fluid float-left">
+                                            <h5 class="mb-1">Imran Khan arrest news LIVE updates: PTI supporters set ablaze Radio Pakistan office in Peshawar</small>
+                                        </div>
+                                    </a>
+
+                                    <a href="https://www.indiatoday.in/world/story/what-is-al-qadir-trust-case-in-which-ex-pak-pm-imran-khan-was-arrested-2376836-2023-05-09" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <div class="w-100 last-item justify-content-between">
+                                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202305/whatsapp_image_2023-05-09_at_19.29.46_0-sixteen_nine.jpeg?VersionId=caQayO8q2i0BiqrolDsiAfJpQ6gxFMZ1&size=690:388" alt="" class="img-fluid float-left">
+                                            <h5 class="mb-1">Imran Khan supporters storm Pakistan Army HQ, Lahore corps commander's house | Videos</small>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- end blog-list -->
+                        </div>
+                        <!-- end widget -->
+                    </div>
+                </div>
+                <!-- end blog-list -->
+            </div>
+            <!-- end widget -->
+
+
+            <!-- end widget -->
+        </div>
+        <!-- end sidebar -->
+        </div>
+        <!-- end col -->
+        </div>
+        <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section> {% endcomment %}
+
+</div>
+<footer class="footer">
+    <div class="row" style="margin: 18px; padding: 12px;">
+        <div class="col-lg-4  col-md-12 col-sm-12 col-xs-12">
+
+            <div class="widget">
+                <h2 class="widget-title">Popular Categories</h2>
+                <div>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Blogs</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <!-- end link-widget -->
+            </div>
+            <!-- end widget -->
+
+        </div>
+        <div class="col-lg-4  col-md-12 col-sm-12 col-xs-12">
+
+            <div class="widget">
+                <h2 class="widget-title">News Links</h2>
+                <div>
+                    <ul>
+                        <li><a href="#">Latest News</a></li>
+                        <li><a href="#">World News </a></li>
+                        <li><a href="#">India News </a></li>
+                        <li><a href="#">West Bengal News</a></li>
+                        <li><a href="#">Kolkata News</a></li>
+                    </ul>
+                </div>
+                <!-- end link-widget -->
+            </div>
+            <!-- end widget -->
+
+        </div>
+        <div class="col-lg-4  col-md-12 col-sm-12 col-xs-12">
+
+            <div class="widget">
+                <h2 class="widget-title">Contact</h2>
+                <div>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>todayandtommorow@news.com</a></li>
+                        <li><a href="#"><i class="fa fa-phone-square" aria-hidden="true"></i> (033)30025678</a></li>
+                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> 1/1, ABC Road, Kolkata-700001</a></li>
+                    </ul>
+                </div>
+                <!-- end link-widget -->
+            </div>
+            <!-- end widget -->
+
+        </div>
+        <!-- end widget -->
+
+    </div>
+    <hr style="background-color: white;">
+
+    <div style="justify-items: center; text-align: center;">
+        <p>Copyright<br>
+            @2023 Today And Tommorow News. All Rights Reserved
+            </a> 
+        </p>
+    </div>
+
+    </div>
+</footer>
+    <!-- Core JavaScript
+                    ================================================== -->
+    <script src="{% static 'today/js/custom.js' %}"></script>
+    <script src="{% static 'today/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'today/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-u7IuT8OehnCt9sVAgp8I0r+Hj1LNnX5rOE6pT9FEmG/hbBD5pjKpImqHQVtMCOyl" crossorigin="anonymous"></script>
+</body>
+
+</html>
