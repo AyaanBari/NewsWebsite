@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'today.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ttnews',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost', 
+        'NAME': 'today',
+        'USER': 'root1',
+        'PASSWORD': 'abcd1234!',
+        'HOST': 'today.mysql.database.azure.com', 
         'PORT': '3306',
     }
 }
