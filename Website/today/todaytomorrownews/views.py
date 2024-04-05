@@ -3,8 +3,13 @@ from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+
+from . models import News
 from .forms import SigninForm, SignupForm
 import requests
+from rest_framework import viewsets
+from rest_framework.decorators import api_view
+from . serializers import NewsSerializer
 API_KEY='9102aa4297e644dea116668aedc4419e'
 
 
@@ -33,6 +38,19 @@ def techcontact(request):
     return render(request, 'today/tech-contact.html')
 def techsingle(request):
     return render(request, 'today/tech-single.html')
+def postnews(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+        # Assuming you have a Post model defined in your models.py file
+        post = Post(title=title, content=content)
+        post.save()
+        messages.success(request, 'Post created successfully.')
+        return redirect('index')
+    else:
+        return render(request, 'today/postnews.html')
+def usernews(request):
+    return render(request, 'today/usernews.html')
 def signup(request):
     if request.POST:
         form = SignupForm(request.POST)
@@ -72,6 +90,17 @@ def signin(request):
 
     return render(request, 'today/sign-in.html', {'form': form})
 
+@api_view(["POST"])
 def signout(request):
     logout(request)
     return redirect('index')
+
+#here we will create a function to get the news from the API and display it on the index page and also analyze the news category using the headline which we will pass to the NLP model we created earlier.
+
+class YourViewSet(viewsets.ModelViewSet):
+    queryset = News.objects.all()
+    serializer_class = NewsSerializer
+@api_view(["POST"])
+def my_view(request):
+    # Your code here
+    pass

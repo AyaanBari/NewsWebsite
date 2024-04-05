@@ -35,3 +35,26 @@ class SigninForm(AuthenticationForm):
     username = forms.CharField(max_length=255, label='Username', widget=forms.TextInput(attrs={'placeholder': 'Enter Username', 'class': 'form-control border-primary'}))
     password = forms.CharField(max_length=128, label='Password', widget=forms.PasswordInput(attrs={'placeholder': 'Enter Password', 'class': 'form-control border-primary'}))
     
+
+class PostNewsForm(forms.Form):
+    title = forms.CharField(
+        label=('Title'),
+        widget=forms.TextInput(attrs={'placeholder': 'Enter Title', 'class': 'form-control border-primary'}))
+    description = forms.CharField(
+        label=('Description'),
+        widget=forms.Textarea(attrs={'placeholder': 'Enter Description', 'class': 'form-control border-primary'}))
+    image = forms.ImageField(
+        label=('Image'),
+        widget=forms.FileInput(attrs={'placeholder': 'Choose Image', 'class': 'form-control border-primary'}))
+    category = forms.CharField(
+        label=('Category'),
+        widget=forms.TextInput(attrs={'placeholder': 'Enter Category', 'class': 'form-control border-primary'}))
+    author = forms.CharField(
+        label=('Author'),
+        widget=forms.TextInput(attrs={'placeholder': 'Enter Author', 'class': 'form-control border-primary'}))
+    date = forms.DateField(
+        label=('Date'),
+        widget=forms.DateInput(attrs={'placeholder': 'Enter Date', 'class': 'form-control border-primary'}))
+    time = forms.TimeField(
+        label=('Time'),
+        widget=forms.TimeInput(attrs={'placeholder': 'Enter Time', 'class': 'form-control border-primary'}))

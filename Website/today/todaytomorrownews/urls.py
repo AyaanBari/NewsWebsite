@@ -1,5 +1,9 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'app1', views.YourViewSet)  # Replace YourViewSet with your actual viewset
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -11,4 +15,5 @@ urlpatterns = [
     path('signup', views.signup, name='signup'),
     path('signin', views.signin, name='signin'),
     path('signout', views.signout, name='signout'),
+    path('api/', include(router.urls)),
 ]
