@@ -46,9 +46,6 @@ class PostNewsForm(forms.Form):
     image = forms.ImageField(
         label=('Image'),
         widget=forms.FileInput(attrs={'placeholder': 'Choose Image', 'class': 'form-control border-primary'}))
-    category = forms.CharField(
-        label=('Category'),
-        widget=forms.TextInput(attrs={'placeholder': 'Enter Category', 'class': 'form-control border-primary'}))
     author = forms.CharField(
         label=('Author'),
         widget=forms.TextInput(attrs={'placeholder': 'Enter Author', 'class': 'form-control border-primary'}))

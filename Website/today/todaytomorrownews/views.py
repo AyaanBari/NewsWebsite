@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
 from . models import News
-from .forms import SigninForm, SignupForm
+from .forms import SigninForm, SignupForm , PostNewsForm
 import requests
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
@@ -38,18 +38,30 @@ def techcontact(request):
     return render(request, 'today/tech-contact.html')
 def techsingle(request):
     return render(request, 'today/tech-single.html')
+
 def postnews(request):
     if request.method == 'POST':
-        title = request.POST.get('title')
-        content = request.POST.get('content')
-        # Assuming you have a Post model defined in your models.py file
-        post = Post(title=title, content=content)
-        post.save()
-        messages.success(request, 'Post created successfully.')
-        return redirect('index')
+        form = PostNewsForm(request.POST, request.FILES)
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            description = form.cleaned_data['description']
+            image = form.cleaned_data['image']
+            author = form.cleaned_data['author']
+            date = form.cleaned_data['date']
+            time = form.cleaned_data['time']
+            post = News(title=title, description=description, image=image, author=author, date=date, time=time)
+            post.save()
+            messages.success(request, 'Post created successfully.')
+            return redirect('index')
+        else:
+            messages.error(request, 'Invalid form data.')
+            return redirect('index')
     else:
-        return render(request, 'today/postnews.html')
+        form = PostNewsForm()
+        return render(request, 'today/postnews.html', {'form': form})
+
 def usernews(request):
+    
     return render(request, 'today/usernews.html')
 def signup(request):
     if request.POST:
