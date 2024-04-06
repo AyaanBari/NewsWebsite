@@ -52,14 +52,14 @@
     <div class="main-lo content">
         <div class="container">
             <h1>Create a New Post</h1>
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="row g-3">
                     {% for frm in form %}
                     <div class="col-md-12">
                         <div class="form-floating">
                             {{frm.label_tag}}<br>
-                            {{frm}}<span class="text-danger">{{frm.errors | striptags}}</span>
+                            {{frm}}<span class="text-danger">{{frm.errors | striptags }}</span>
                         </div>
                     </div>
                     {% endfor %}

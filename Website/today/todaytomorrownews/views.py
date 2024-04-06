@@ -4,14 +4,12 @@ from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-
 from . models import News
 from .forms import SigninForm, SignupForm , PostNewsForm
 import requests
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from datetime import datetime
-from . serializers import NewsSerializer
 API_KEY='9102aa4297e644dea116668aedc4419e'
 
 
@@ -41,6 +39,12 @@ def techcontact(request):
 def techsingle(request):
     return render(request, 'today/tech-single.html')
 
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .forms import PostNewsForm  # Assuming PostNewsForm is defined in your app's forms.py
+import pickle
+import datetime
+
 def postnews(request):
     if request.method == 'POST':
         form = PostNewsForm(request.POST, request.FILES)
@@ -49,33 +53,49 @@ def postnews(request):
             title = form.cleaned_data['title']
             description = form.cleaned_data['description']
             image = form.cleaned_data['image']
-            # Load model for prediction (within the valid form block)
-            try:
-                with open('static/today/models/news_pickle.pickle', 'rb') as f:
-                    model = pickle.load(f)
-            except FileNotFoundError:
-                messages.error(request, 'Error loading prediction model. Please contact the administrator.')
-                return render(request, 'today/postnews.html', {'form': form})  # Render with error message
 
-            # Make prediction
             try:
-                predicted_category = model.predict([title])[0]
-            except Exception as e:  # Catch generic exceptions for prediction errors
+                # Load prediction model and vectorizer from pickle file
+                with open('news_pickle.pickle', 'rb') as f:
+                    nb1 = pickle.load(f)
+                    vectorizer = pickle.load(f)
+
+                # Transform the submitted title text using the vectorizer
+                X_new_transformed = vectorizer.transform([title])
+
+                # Make prediction using the loaded nb1 model
+               # predicted_proba = nb1.predict(X_new_transformed)[0]  # Get probability distribution
+                predicted_category = nb1.predict(X_new_transformed)[0]  # Get predicted category based on highest probability
+                if predicted_category == 0:
+                    category = 'Business'
+                elif predicted_category == 1:
+                    category = 'Entertainment'
+                elif predicted_category == 2:
+                    category = 'Health'
+                elif predicted_category == 3:
+                    category = 'Politics'
+                else:
+                    category = 'Sports'
+         
+            except Exception as e:
                 messages.error(request, f'Error making prediction: {e}')
-                return render(request, 'today/postnews.html', {'form': form})  # Render with error message
+                return render(request, 'today/postnews.html', {'form': form})
 
             # Create the news post with the predicted category
-            post = News(title=title, description=description, image=image, author=request.user.get_full_name(), date=datetime.now().date(), time=datetime.now().time(), category=predicted_category)
+            post = News(title=title, description=description, image=image,
+                        author=request.user.get_full_name(), date=datetime.date.today(),
+                        time=datetime.datetime.now().time(), category=category)
             post.save()
 
             messages.success(request, 'Post created successfully.')
             return redirect('usernews')  # Redirect after successful POST
         else:
-            messages.error(request, 'Invalid form data.')
-            return render(request, 'today/postnews.html', {'form': form})  # Render form with errors
+            messages.error(request, form.errors)  # Display form errors on the template
+            return render(request, 'today/postnews.html', {'form': form})
     else:
         # Render the form for GET requests
         return render(request, 'today/postnews.html', {'form': PostNewsForm()})
+
 
 def usernews(request):
 
@@ -119,17 +139,9 @@ def signin(request):
 
     return render(request, 'today/sign-in.html', {'form': form})
 
-@api_view(["POST"])
 def signout(request):
     logout(request)
     return redirect('index')
 
 #here we will create a function to get the news from the API and display it on the index page and also analyze the news category using the headline which we will pass to the NLP model we created earlier.
 
-class YourViewSet(viewsets.ModelViewSet):
-    queryset = News.objects.all()
-    serializer_class = NewsSerializer
-@api_view(["POST"])
-def my_view(request):
-    # Your code here
-    pass

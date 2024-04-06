@@ -2,8 +2,8 @@ from django.urls import path, include
 from . import views
 from rest_framework import routers
 
-router = routers.DefaultRouter()
-router.register(r'app1', views.YourViewSet)  # Replace YourViewSet with your actual viewset
+'''router = routers.DefaultRouter()
+router.register(r'app1', views.YourViewSet)  # Replace YourViewSet with your actual viewset'''
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -15,6 +15,7 @@ urlpatterns = [
     path('signup', views.signup, name='signup'),
     path('signin', views.signin, name='signin'),
     path('signout', views.signout, name='signout'),
-    path('postnews', views.postnews, name='postnews'),  
-    path('api/', include(router.urls)),
+    path('postnews', views.postnews, name='postnews'), 
+    path('usernews', views.usernews, name='usernews'),
+    #path('api/', include(router.urls)),
 ]

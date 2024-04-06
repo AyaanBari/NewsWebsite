@@ -45,4 +45,4 @@ class PostNewsForm(forms.Form):
         widget=forms.Textarea(attrs={'placeholder': 'Enter Description', 'class': 'form-control border-primary'}))
     image = forms.ImageField(
         label=('Image'),
-        widget=forms.FileInput(attrs={'placeholder': 'Choose Image', 'class': 'form-control border-primary'}))
+        widget=forms.FileInput(attrs={'placeholder': 'Choose Image', 'class': 'form-control border-primary', 'accept': 'image/*', 'capture': 'camera'}))
