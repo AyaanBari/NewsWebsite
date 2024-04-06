@@ -1,4 +1,5 @@
-#from imaplib import _Authenticator
+from imaplib import _Authenticator
+import pickle
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.contrib import messages
@@ -9,6 +10,7 @@ from .forms import SigninForm, SignupForm , PostNewsForm
 import requests
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
+from datetime import datetime
 from . serializers import NewsSerializer
 API_KEY='9102aa4297e644dea116668aedc4419e'
 
@@ -43,25 +45,40 @@ def postnews(request):
     if request.method == 'POST':
         form = PostNewsForm(request.POST, request.FILES)
         if form.is_valid():
+            # Process form data for saving news post
             title = form.cleaned_data['title']
             description = form.cleaned_data['description']
             image = form.cleaned_data['image']
-            author = form.cleaned_data['author']
-            date = form.cleaned_data['date']
-            time = form.cleaned_data['time']
-            post = News(title=title, description=description, image=image, author=author, date=date, time=time)
+            # Load model for prediction (within the valid form block)
+            try:
+                with open('static/today/models/news_pickle.pickle', 'rb') as f:
+                    model = pickle.load(f)
+            except FileNotFoundError:
+                messages.error(request, 'Error loading prediction model. Please contact the administrator.')
+                return render(request, 'today/postnews.html', {'form': form})  # Render with error message
+
+            # Make prediction
+            try:
+                predicted_category = model.predict([title])[0]
+            except Exception as e:  # Catch generic exceptions for prediction errors
+                messages.error(request, f'Error making prediction: {e}')
+                return render(request, 'today/postnews.html', {'form': form})  # Render with error message
+
+            # Create the news post with the predicted category
+            post = News(title=title, description=description, image=image, author=request.user.get_full_name(), date=datetime.now().date(), time=datetime.now().time(), category=predicted_category)
             post.save()
+
             messages.success(request, 'Post created successfully.')
-            return redirect('index')
+            return redirect('usernews')  # Redirect after successful POST
         else:
             messages.error(request, 'Invalid form data.')
-            return redirect('index')
+            return render(request, 'today/postnews.html', {'form': form})  # Render form with errors
     else:
-        form = PostNewsForm()
-        return render(request, 'today/postnews.html', {'form': form})
+        # Render the form for GET requests
+        return render(request, 'today/postnews.html', {'form': PostNewsForm()})
 
 def usernews(request):
-    
+
     return render(request, 'today/usernews.html')
 def signup(request):
     if request.POST:

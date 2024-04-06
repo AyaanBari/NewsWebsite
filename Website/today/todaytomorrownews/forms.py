@@ -46,12 +46,3 @@ class PostNewsForm(forms.Form):
     image = forms.ImageField(
         label=('Image'),
         widget=forms.FileInput(attrs={'placeholder': 'Choose Image', 'class': 'form-control border-primary'}))
-    author = forms.CharField(
-        label=('Author'),
-        widget=forms.TextInput(attrs={'placeholder': 'Enter Author', 'class': 'form-control border-primary'}))
-    date = forms.DateField(
-        label=('Date'),
-        widget=forms.DateInput(attrs={'placeholder': 'Enter Date', 'class': 'form-control border-primary'}))
-    time = forms.TimeField(
-        label=('Time'),
-        widget=forms.TimeInput(attrs={'placeholder': 'Enter Time', 'class': 'form-control border-primary'}))

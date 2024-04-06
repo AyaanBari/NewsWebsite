@@ -17,13 +17,8 @@ class News(models.Model):
     author = models.CharField(max_length=50)
     date = models.DateField()
     time = models.TimeField()
+    category = models.CharField(max_length=100 , default='category')
     def __str__(self):
         return self.title
-
-class Category(models.Model):
-    nid = models.ForeignKey(News, on_delete=models.CASCADE, related_name='categories')
-    cat = models.CharField(max_length=50)
-    def __str__(self):
-        return self.cat
 
 
