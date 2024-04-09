@@ -16,6 +16,6 @@ urlpatterns = [
     path('signin', views.signin, name='signin'),
     path('signout', views.signout, name='signout'),
     path('postnews', views.postnews, name='postnews'), 
-    path('usernews', views.usernews, name='usernews'),
+    path('usernews/<int:catid>', views.usernews, name='usernews'),
     #path('api/', include(router.urls)),
 ]

@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Site Metas -->
+<title>Today & Tomorrow News - Home</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Site Icons -->
+<link rel="shortcut icon" href="{% static 'today/images/favicon.ico' %}" type="image/x-icon" />
+<link rel="apple-touch-icon" href="{% static 'today/images/apple-touch-icon.png' %}">
+
+<!-- Design fonts -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+<!-- Bootstrap core CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+<link href="{% static 'today/css/bootstrap.css' %}" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="{% static 'today/css/style.css' %}" rel="stylesheet">
+
+<link href="{% static 'today/css/font-awesome.min.css' %}" rel="stylesheet">
+
+<!-- Responsive styles for this template -->
+<link href="{% static 'today/css/responsive.css' %}" rel="stylesheet">
+
+<!-- Colors for this template -->
+<link href="{% static 'todaycss/colors.css' %}" rel="stylesheet">
+
+<!-- Version Tech CSS for this template -->
+<link href="{% static 'today/css/tech.css' %}" rel="stylesheet">
+
+<script src="{% static 'today/js/custom.js' %}"></script>
+
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+<style>
+        
+</style>
+</head>
+
+<body style="background-color:black;">
+
+{% include './nav.html' %}
+<br><br><br><br>
+{% csrf_token %} 
+<div class="category-pane">
+        <div class="btn-group d-flex" role="group" aria-label="Category Buttons" style="justify-content: none;">
+          <a href="{% url 'usernews' 0 %}" style="border-radius: 49px; background-color: red; color: white; padding: 20px; width: 123px; height: 60px; margin: 0 auto; text-align: center;">
+            <span style="align-items: center;">All</span>  </a>
+          <a href="{% url 'usernews' 1 %}" style="border-radius: 49px; background-color: red; color: white; padding: 20px; width: 123px; height: 60px; margin: 0 auto; text-align: center;">
+            <span style="align-items: center;">Business</span>  </a>
+          <a href="{% url 'usernews' 2 %}" style="border-radius: 49px; background-color: red; color: white; padding: 20px; width: 150px; height: 60px; margin: 0 auto; text-align: center;">
+            <span style="align-items: center;">Entertainment</span>  </a>
+          <a href="{% url 'usernews' 3 %}" style="border-radius: 49px; background-color: red; color: white; padding: 20px; width: 123px; height: 60px; margin: 0 auto; text-align: center;">
+            <span style="align-items: center;">Health</span>  </a>
+          <a href="{% url 'usernews' 4 %}" style="border-radius: 49px; background-color: red; color: white; padding: 20px; width: 123px; height: 60px; margin: 0 auto; text-align: center;">
+            <span style="align-items: center;">Politics</span>  </a>
+          <a href="{% url 'usernews' 5 %}" style="border-radius: 49px; background-color: red; color: white; padding: 20px; width: 123px; height: 60px; margin: 0 auto; text-align: center;">
+            <span style="align-items: center;">Sports</span>  </a>
+        </div>
+      </div>
+      
+  <br><br>
+
+              
+    <div class="container" style="margin-bottom:40px;">
+        <center>
+               
+            <div class="row">
+                <div class="col-md-12">{% if cat %}
+                    <div id="main-content" class="blog-top clearfix">
+                        <h4 class="pull-left" style="color:white;" id="selectedCategory">Current Category: {{ cat }}</h4>
+                    </div>   {% endif %}
+                    {% if news %}
+                    {% for i in news %}
+                    <div class="card rounded shadow-lg" style="width: 40rem;margin-bottom:70px;">
+                        <img src="{{ i.image }}" class="card-img-top" alt="...">
+                        <div class="card-body" style="padding:10px;">
+                            <p class="card-text">{{ i.author }}</p>
+                            <h5 class="card-title">{{ i.title }}</h5>
+                            <p class="card-text">{{ i.description }}</p>
+                            <p class="card-text">{{ i.content }}</p>
+                            <hr>
+                            <small style="position:relative; margin-bottom:10px;">date: {{ i.date }}</small>
+                            <a href="{{ i.url }}" target="_blank" style="position:absolute; right:10px; background-color:red; color:white; padding:15px;">See News</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <p>No news posts found in this category.</p>
+                    {% endif %}
+                </div>
+                <br><br>
+            </div>
+        </center>
+    </div>
+<footer class="footer">
+        <div class="row" style="margin: 18px; padding: 12px;">
+                <div class="col-lg-4  col-md-12 col-sm-12 col-xs-12">
+                        <div class="widget">
+                                <h2 class="widget-title">Popular Categories</h2>
+                                <div>
+                                        <ul>
+                                                <li><a href="#">Home</a></li>
+                                                <li><a href="#">News</a></li>
+                                                <li><a href="#">Blogs</a></li>
+                                                <li><a href="#">Reviews</a></li>
+                                        </ul>
+                                </div>
+                        </div>
+                </div>
+                <div class="col-lg-4  col-md-12 col-sm-12 col-xs-12">
+                        <div class="widget">
+                                <h2 class="widget-title">News Links</h2>
+                                <div>
+                                        <ul>
+                                                <li><a href="#">Latest News</a></li>
+                                                <li><a href="#">World News </a></li>
+                                                <li><a href="#">India News </a></li>
+                                                <li><a href="#">West Bengal News</a></li>
+                                                <li><a href="#">Kolkata News</a></li>
+                                        </ul>
+                                </div>
+                        </div>
+                </div>
+                <div class="col-lg-4  col-md-12 col-sm-12 col-xs-12">
+                        <div class="widget">
+                                <h2 class="widget-title">Contact</h2>
+                                <div>
+                                        <ul>
+                                                <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>todayandtommorow@news.com</a></li>
+                                                <li><a href="#"><i class="fa fa-phone-square" aria-hidden="true"></i> (033)30025678</a></li>
+                                                <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> 1/1, ABC Road, Kolkata-700001</a></li>
+                                        </ul>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <hr style="background-color: white;">
+        <div style="justify-items: center; text-align: center;">
+                <p>
+                        Copyright<br>
+                        @2023 Today And Tommorow News. All Rights Reserved
+                </p>
+        </div>
+</footer>
+
+<!-- Core JavaScript
+================================================== -->
+<script src="{% static 'today/js/custom.js' %}"></script>
+<script src="{% static 'today/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'today/js/jquery-3.2.1.min.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-u7IuT8OehnCt9sVAgp8I0r+Hj1LNnX5rOE6pT9FEmG/hbBD5pjKpImqHQVtMCOyl" crossorigin="anonymous"></script>
+</body>
+</html>

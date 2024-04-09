@@ -1,4 +1,5 @@
 from imaplib import _Authenticator
+import json
 import pickle
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
@@ -10,6 +11,9 @@ import requests
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from datetime import datetime
+from django.views.decorators.csrf import csrf_exempt
+import pickle
+import datetime
 API_KEY='9102aa4297e644dea116668aedc4419e'
 
 
@@ -39,12 +43,6 @@ def techcontact(request):
 def techsingle(request):
     return render(request, 'today/tech-single.html')
 
-from django.shortcuts import render, redirect
-from django.contrib import messages
-from .forms import PostNewsForm  # Assuming PostNewsForm is defined in your app's forms.py
-import pickle
-import datetime
-
 def postnews(request):
     if request.method == 'POST':
         form = PostNewsForm(request.POST, request.FILES)
@@ -64,7 +62,6 @@ def postnews(request):
                 X_new_transformed = vectorizer.transform([title])
 
                 # Make prediction using the loaded nb1 model
-               # predicted_proba = nb1.predict(X_new_transformed)[0]  # Get probability distribution
                 predicted_category = nb1.predict(X_new_transformed)[0]  # Get predicted category based on highest probability
                 if predicted_category == 0:
                     category = 'Business'
@@ -84,11 +81,11 @@ def postnews(request):
             # Create the news post with the predicted category
             post = News(title=title, description=description, image=image,
                         author=request.user.get_full_name(), date=datetime.date.today(),
-                        time=datetime.datetime.now().time(), category=category)
+                        time=datetime.datetime.now().time(), category=category ,catid=predicted_category+1)
             post.save()
 
             messages.success(request, 'Post created successfully.')
-            return redirect('usernews')  # Redirect after successful POST
+            return redirect('usernews/0')  # Redirect after successful POST
         else:
             messages.error(request, form.errors)  # Display form errors on the template
             return render(request, 'today/postnews.html', {'form': form})
@@ -97,9 +94,38 @@ def postnews(request):
         return render(request, 'today/postnews.html', {'form': PostNewsForm()})
 
 
-def usernews(request):
+def usernews(request, catid=None):  # Change parameter name to 'catid'
+    if request.method == 'GET':
+        if catid == 0:  # Check if 'catid' is 0
+            cat='all'
+        elif catid == 1:
+            cat='Business'
+        elif catid == 2:
+            cat='Entertainment'
+        elif catid == 3:
+            cat='Health'
+        elif catid == 4:
+            cat='Politics'
+        elif catid == 5:
+            cat='Sports'
+        try:
+            # Filter news based on catid (assuming 'catid' field exists)
+            if catid:  # Check if 'catid' is provided
+                news = News.objects.filter(catid=catid)
+            else:
+                news = News.objects.all()  # Show all news if no category selected
 
-    return render(request, 'today/usernews.html')
+            context = {'news': news, 'cat': cat}  # No need for 'category_list' since you're not displaying categories separately
+            if not news:
+                messages.info(request, 'No news posts found in this category.')
+            return render(request, 'today/usernews.html', context)
+        except Exception as e:
+            messages.error(request, f'An error occurred: {e}')
+            return redirect('index')
+    else:
+        messages.error(request, 'Invalid request method.')
+        return redirect('index')
+
 def signup(request):
     if request.POST:
         form = SignupForm(request.POST)

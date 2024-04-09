@@ -1659,6 +1659,7 @@ hr.invis3 {
     display: block;
     margin: 20px auto 0;
     vertical-align: middle;
+    /* Remove the vertical-align property */
 }
 
 #preloader {

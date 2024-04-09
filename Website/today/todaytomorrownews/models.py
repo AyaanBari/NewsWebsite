@@ -18,6 +18,7 @@ class News(models.Model):
     date = models.DateField()
     time = models.TimeField()
     category = models.CharField(max_length=100 , default='category')
+    catid = models.IntegerField(default=0)
     def __str__(self):
         return self.title
 
