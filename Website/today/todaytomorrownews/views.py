@@ -44,60 +44,62 @@ def techsingle(request):
     return render(request, 'today/tech-single.html')
 
 def postnews(request):
-    if request.method == 'POST':
-        form = PostNewsForm(request.POST, request.FILES)
-        if form.is_valid():
-            # Process form data for saving news post
-            title = form.cleaned_data['title']
-            description = form.cleaned_data['description']
-            image = form.cleaned_data['image']
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            form = PostNewsForm(request.POST, request.FILES)
+            if form.is_valid():
+                # Process form data for saving news post
+                title = form.cleaned_data['title']
+                description = form.cleaned_data['description']
+                image = form.cleaned_data['image']
 
-            try:
-                # Load prediction model and vectorizer from pickle file
-                with open('news_pickle.pickle', 'rb') as f:
-                    nb1 = pickle.load(f)
-                    vectorizer = pickle.load(f)
+                try:
+                    with open('news_pickle.pickle', 'rb') as f:
+                        nb1 = pickle.load(f)
+                        vectorizer = pickle.load(f)
 
-                # Transform the submitted title text using the vectorizer
-                X_new_transformed = vectorizer.transform([title])
+                    # Transform the submitted title text using the vectorizer
+                    X_new_transformed = vectorizer.transform([title])
 
-                # Make prediction using the loaded nb1 model
-                predicted_category = nb1.predict(X_new_transformed)[0]  # Get predicted category based on highest probability
-                if predicted_category == 0:
-                    category = 'Business'
-                elif predicted_category == 1:
-                    category = 'Entertainment'
-                elif predicted_category == 2:
-                    category = 'Health'
-                elif predicted_category == 3:
-                    category = 'Politics'
-                else:
-                    category = 'Sports'
-         
-            except Exception as e:
-                messages.error(request, f'Error making prediction: {e}')
+                    # Make prediction using the loaded nb1 model
+                    predicted_category = nb1.predict(X_new_transformed)[0]  # Get predicted category based on highest probability
+                    if predicted_category == 0:
+                        category = 'Business'
+                    elif predicted_category == 1:
+                        category = 'Entertainment'
+                    elif predicted_category == 2:
+                        category = 'Health'
+                    elif predicted_category == 3:
+                        category = 'Politics'
+                    else:
+                        category = 'Sports'
+
+                except Exception as e:
+                    messages.error(request, f'Error making prediction: {e}')
+                    return render(request, 'today/postnews.html', {'form': form})
+
+                # Create the news post with the predicted category
+                post = News(title=title, description=description, image=image,
+                            author=request.user.get_full_name(), date=datetime.date.today(),
+                            time=datetime.datetime.now().time(), category=category ,catid=predicted_category+1)
+                post.save()
+
+                messages.success(request, 'Post created successfully.')
+                return redirect('usernews/0')  # Redirect after successful POST
+            else:
+                messages.error(request, form.errors)  # Display form errors on the template
                 return render(request, 'today/postnews.html', {'form': form})
-
-            # Create the news post with the predicted category
-            post = News(title=title, description=description, image=image,
-                        author=request.user.get_full_name(), date=datetime.date.today(),
-                        time=datetime.datetime.now().time(), category=category ,catid=predicted_category+1)
-            post.save()
-
-            messages.success(request, 'Post created successfully.')
-            return redirect('usernews/0')  # Redirect after successful POST
         else:
-            messages.error(request, form.errors)  # Display form errors on the template
-            return render(request, 'today/postnews.html', {'form': form})
+            # Render the form for GET requests
+            return render(request, 'today/postnews.html', {'form': PostNewsForm()})
     else:
-        # Render the form for GET requests
-        return render(request, 'today/postnews.html', {'form': PostNewsForm()})
+        return redirect('signin')
 
 
-def usernews(request, catid=None):  # Change parameter name to 'catid'
+def usernews(request, catid=None): 
     if request.method == 'GET':
         if catid == 0:  # Check if 'catid' is 0
-            cat='all'
+            cat='All'
         elif catid == 1:
             cat='Business'
         elif catid == 2:
@@ -108,9 +110,12 @@ def usernews(request, catid=None):  # Change parameter name to 'catid'
             cat='Politics'
         elif catid == 5:
             cat='Sports'
+        else:
+            messages.error(request, 'Invalid category selected.')
+            return redirect('index')
         try:
             # Filter news based on catid (assuming 'catid' field exists)
-            if catid:  # Check if 'catid' is provided
+            if catid != 0:  # Check if 'catid' is provided
                 news = News.objects.filter(catid=catid)
             else:
                 news = News.objects.all()  # Show all news if no category selected
