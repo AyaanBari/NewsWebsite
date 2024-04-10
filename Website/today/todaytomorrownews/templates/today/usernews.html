@@ -100,13 +100,13 @@
                         <img src="/../../../images/{{ i.image}}" class="card-img-top" alt="Image for {{ i.title }}">
 
                         <div class="card-body" style="padding:10px;">
-                            <p class="card-text">{{ i.author }}</p>
+                            <p class="card-text">Author : {{ i.author }}</p>
                             <h5 class="card-title">{{ i.title }}</h5>
                             <p class="card-text">{{ i.description }}</p>
-                            <p class="card-text">{{ i.content }}</p>
                             <hr>
                             <small style="position:relative; margin-bottom:10px;">date: {{ i.date }}</small>
-                            <a href="{{ i.url }}" target="_blank" style="position:absolute; right:10px; background-color:red; color:white; padding:15px;">See News</a>
+                            <small style="position: relative; margin-bottom: 10px;">time : {{ i.time }}</small>
+                            <small style="position:relative; margin-bottom:10px;">category: {{ i.category }}</small>
                         </div>
                     </div>
                     {% endfor %}
