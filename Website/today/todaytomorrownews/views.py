@@ -14,6 +14,7 @@ from datetime import datetime
 from django.views.decorators.csrf import csrf_exempt
 import pickle
 import datetime
+from django.conf import settings
 API_KEY='9102aa4297e644dea116668aedc4419e'
 
 
@@ -113,20 +114,18 @@ def usernews(request, catid=None):
         else:
             messages.error(request, 'Invalid category selected.')
             return redirect('index')
-        try:
-            # Filter news based on catid (assuming 'catid' field exists)
-            if catid != 0:  # Check if 'catid' is provided
-                news = News.objects.filter(catid=catid)
-            else:
-                news = News.objects.all()  # Show all news if no category selected
+        
+        if catid != 0:  # Check if 'catid' is provided
+            news = News.objects.filter(catid=catid)
+        else:
+            news = News.objects.all()  # Show all news if no category selected
 
-            context = {'news': news, 'cat': cat}  # No need for 'category_list' since you're not displaying categories separately
-            if not news:
-                messages.info(request, 'No news posts found in this category.')
-            return render(request, 'today/usernews.html', context)
-        except Exception as e:
-            messages.error(request, f'An error occurred: {e}')
-            return redirect('index')
+        # Access image for each news item
+
+        context = {'news': news, 'cat': cat}  # No need for 'category_list' since you're not displaying categories separately
+        if not news:
+            messages.info(request, 'No news posts found in this category.')
+        return render(request, 'today/usernews.html', context)
     else:
         messages.error(request, 'Invalid request method.')
         return redirect('index')

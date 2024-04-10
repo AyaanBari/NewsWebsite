@@ -79,7 +79,11 @@
       </div>
       
   <br><br>
-
+  <center><div class="btn-group d-flex" role="group" aria-label="Category Buttons" style="justify-content: none;">
+        <a href="{% url 'postnews' %}" style="border-radius: 49px; background-color: red; color: white; padding: 20px; width: 300px; height: 60px; margin: 0 auto; text-align: center;">
+            <span style="align-items: center;">Post Your own news</span>  </a>
+            </div></center>
+<br><br>
               
     <div class="container" style="margin-bottom:40px;">
         <center>
@@ -92,7 +96,9 @@
                     {% if news %}
                     {% for i in news %}
                     <div class="card rounded shadow-lg" style="width: 40rem;margin-bottom:70px;">
-                        <img src="{{ i.image }}" class="card-img-top" alt="...">
+
+                        <img src="/../../../images/{{ i.image}}" class="card-img-top" alt="Image for {{ i.title }}">
+
                         <div class="card-body" style="padding:10px;">
                             <p class="card-text">{{ i.author }}</p>
                             <h5 class="card-title">{{ i.title }}</h5>
