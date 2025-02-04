@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'today.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'today',
-        'USER': 'root1',
-        'PASSWORD': 'abcd1234!',
-        'HOST': 'today.mysql.database.azure.com', 
+        'NAME': 'bai1gsyuwn0dbdsmqb0u',
+        'USER': 'uwftsglz38qhkt91',
+        'PASSWORD': 'fbGaz9VP0vZCeeG4p90d',
+        'HOST': 'bai1gsyuwn0dbdsmqb0u-mysql.services.clever-cloud.com', 
         'PORT': '3306',
     }
 }
@@ -122,7 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / "static"]
+STATICFILES_DIRS = [BASE_DIR / "todaytomorrownews/static"]
 # Media files (uploaded user files)
 MEDIA_URL = '/images/'
 MEDIA_ROOT = BASE_DIR / "images"
